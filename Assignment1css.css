@@ -1,0 +1,208 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+   }
+   
+   *, *:before, *:after {
+     box-sizing: inherit;
+   }
+
+  /*  Body text */
+
+/*background header color and stuff */
+header {
+  background-color: #add8e6;
+  text-align:center;
+}
+body{
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+/* Logo code */
+header img{
+  width: 100%;
+  height: 200px;
+  background-image: url('mega\ travel\ logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow:hidden;
+}
+/* gray divider */
+.divider{
+  background-color: #d3d3d3;
+  height:25px;
+}
+
+/* Navigation code */
+
+nav ul{
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+nav a {
+  color:black;
+  font-weight: bold;
+  display: block;
+  text-decoration:none;
+  padding: 20px; 
+  overflow:hidden;
+
+}
+
+nav a:hover {
+  top: -10px;
+  text-decoration: none;
+  color: #ffa500;
+}
+
+/* Heading one code
+   Used for smalled names in resort cards */
+
+ h1 {
+  padding-left:10px; 
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+/* paragraph stuff */
+ p {
+  margin-top: 20px;
+  margin-left: 30px 0;
+  padding-left: 10px;
+  width: 50%;
+  line-height: 25px;
+  font-family: sans-serif;
+}
+
+/*Cool fading animation for resort cards */
+@keyframes resortCards {
+  from {
+    background-color: white;
+    color: black;
+    border-width: 1px;
+    padding: 15px;
+  }
+  to {
+    background-color: black;
+    color: white;
+    border-width: 5px;
+    padding: 11px;
+  }
+}
+
+/* Resort Cards */
+.resort-cards { /*the section part */
+  margin-bottom: 30px;
+}
+
+/*the cards themselves */
+.resort-card:hover{
+  animation: resortCards 3s;  /* Calling back to that keyframes */
+  background: black;
+  color:white;
+
+} 
+.resort-card a {
+  color: black;
+  text-decoration: none;
+}
+
+.resort-card:hover a {
+  color:white;
+}
+
+.resort-card {
+ /* width: 450px; */
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+}
+
+.resort-card img {
+  width: 100%;
+}
+
+
+.resort-card h2 {
+  margin: 30px 0 15px;
+}
+
+.resort-card p {
+  line-height: 1.5;
+}
+
+.original-price {
+  color: grey;
+  text-transform: uppercase;
+}
+
+.current-price span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.saving {
+  color: green;
+}
+
+/* Media sizer, does it work?? Who knows */
+
+@media (min-width: 768px) {
+  header {
+    align-items: center;
+    display: flex;
+  }
+  nav {
+    background: transparent;
+    margin-top: 0;
+    margin-left: 30px;
+  }
+  nav a {
+    color: black;
+    position: relative;
+      top: 0;
+      transition: top .5s, color .5s;
+  }
+  nav a:hover {
+    top: -10px;
+    text-decoration: none;
+    color: #ffa500;
+  }
+  .intro {
+    width: 50%;
+  }
+  .resort-cards {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+    }
+  .resort-card {
+      display: inline-block;
+    }
+}
+
+
+@media only print {
+  nav {
+    display: none;
+  }
+} 
+/* Footer code */
+
+footer {
+  margin-top: 25px;
+  font-family: "sans serif";
+  color: white;
+  background-color: #000000;
+  height:100px;
+}
